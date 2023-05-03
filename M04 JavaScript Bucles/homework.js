@@ -5,11 +5,12 @@ function obtenerMayor(x, y) {
    // Retornar el número más grande.
    // Si son iguales, retornar cualquiera de los dos.
    // Tu código:
-   const valorMayor = Math.max(x, y)
-   if (x = y) {
+   if (x > y) {
       return x
+   } else if (y > x) {
+      return y
    } else {
-      return valorMayor
+      return x
    }
 
 }
@@ -69,16 +70,22 @@ function colors(color) {
    // Si no es ninguno de esos colores           --> "Color not found".
    // IMPORTANTE: utilizar el statement SWITCH.
    // Tu código:
-   if (color === "blue") {
-      return "This is blue"
-   } else if (color === "red") {
-      return "This is red"
-   } else if (color === "green") {
-      return "This is green"
-   } else if (color === "orange") {
-      return "This is orange"
-   } else {
-      return "Color not found"
+   switch (color) {
+      case "blue":
+         return "This is blue";
+         break;
+      case "red":
+         return "This is red";
+         break;
+      case "green":
+         return "This is green";
+         break;
+      case "orange":
+         return "This is orange";
+         break;      
+      default:
+         return "Color not found";
+         break;
    }
 }
 
@@ -97,7 +104,7 @@ function estaEnRango(num) {
    // Retornar true si "num" es menor que 50 y mayor que 20.
    // De lo contrario, retornar false.
    // Tu código:
-   if (num >= 20 && num <= 50) {
+   if (num > 20 && num < 50) {
       return true
    } else {
       return false
@@ -147,6 +154,9 @@ function operadoresLogicos(num1, num2, num3) {
       return "Numero 1 es mayor y positivo"
    } else if (num1 < 0 || num2 < 0 || num3 < 0) {
       return "Hay negativos"
+   } else if (num3 > num1 && num3 > num2) {
+      num3 = num3 + 1
+      return num3
    } else if ( num1 == 0 && num2 == 0 && num3 == 0) {
       return "Error"
    } else {
@@ -177,6 +187,11 @@ function esVerdadero(valor) {
    // Si "valor" es verdadero retornar "Soy verdadero".
    // Caso contrario, retornar "Soy falso".
    // Tu código:
+   if (valor) {
+      return "Soy verdadero";
+   } else {
+      return "Soy falso";
+   }
    
 }
 
@@ -184,14 +199,30 @@ function tieneTresDigitos(num) {
    // Si el número recibido tiene tres dígitos retornar true.
    // Caso contrario, retornar false.
    // Tu código:
+   if ( num > 99 && num < 1000 ) {
+      return true
+   } else {
+      return false
+   }
 }
+
+//tieneTresDigitos(457)
 
 function doWhile(num) {
    // Implementar una función que aumente el valor recibido en 5 hasta un límite de 8 veces.
    // Retornar el valor final.
    // Utilizar el bucle Do-While.
    // Tu código:
+   var i = 0
+   do {
+      num = num + 5
+      i++
+      console.log(i);
+   } while (i < 8);
+   return num
 }
+
+doWhile(1)
 
 /*⚠️ NO MODIFIQUES NADA DEBAJO DE ESTO ⚠️*/
 module.exports = {

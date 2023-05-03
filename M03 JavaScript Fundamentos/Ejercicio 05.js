@@ -10,12 +10,12 @@ function esPositivo(num) {
    // Tu código:
    if (num > 0) {
       return "Es positivo"
+   } else if (num == 0){
+      return false
    } else {
       return "Es negativo"
    }
 }
-
-console.log(esPositivo(0));
 
 function agregarSimboloExclamacion(str) {
    // Agrega un símbolo de exclamación al final del string "str" y retórnalo
@@ -37,7 +37,7 @@ function obtenerSaludo(nombre) {
    // Toma el string "nombre" y concatena otra string en la cadena para que tome la siguiente forma:
    // Ejemplo: "Martin" ---> "Hola Martin!"
    // Tu código:
-   var saludo = "Hola " + nombre
+   var saludo = "Hola " + nombre + "!"
    return saludo
 }
 

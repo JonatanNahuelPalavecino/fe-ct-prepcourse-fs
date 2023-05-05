@@ -106,25 +106,51 @@ function multiplicarArgumentos() {
 function cuentoElementos(array) {
    // Desarrolla una función que retorne la cantidad de elementos del arreglo cuyo valor sea mayor que 18.
    // Tu código:
+   var element = 0
+   for (var i = 0; i < array.length; i++) {
+      if (array[i] > 18) {
+         element++
+      }
+   }
+   return element
 }
+
 
 function diaDeLaSemana(numeroDeDia) {
    // Supongamos que los días de la semana se codifican como 1 = Domingo, 2 = Lunes y así sucesivamente.
    // Realiza una función que, dado el número del día de la semana, retorne: "Es fin de semana"
    // si el día corresponde a "Sábado" o "Domingo", y "Es dia laboral" en caso contrario.
    // Tu código:
+   if (numeroDeDia === 7 || numeroDeDia === 1) {
+      return "Es fin de semana"
+   } else {
+      return "Es dia laboral"
+   }
 }
 
 function empiezaConNueve(num) {
    // Esta función recibe por parámetro un número.
    // Debe retornar true si el entero inicia con 9 y false en otro caso.
    // Tu código:
+   var numStr = num.toString().split("")
+   if (numStr[0] === "9") {
+      return true
+   } else {
+      return false
+   }
 }
 
 function todosIguales(array) {
    // Si todos los elementos del arreglo son iguales, retornar true.
    // Caso contrario retornar false.
    // Tu código:
+   for (let i = 0; i < array.length; i++) {
+      if (array[i] === array[i + 1]) {
+         return true
+      } else {
+         return false
+      }
+   }
 }
 
 function mesesDelAño(array) {
@@ -132,18 +158,39 @@ function mesesDelAño(array) {
    // "Marzo" y "Noviembre", guardarlos en un nuevo arreglo y retornarlo.
    // Si alguno de los meses no está, retornar el string: "No se encontraron los meses pedidos".
    // Tu código:
+   var mesesPedidos = []
+
+   array.forEach(e => {
+      if (e === "Enero" || e === "Marzo" || e === "Noviembre") {
+         mesesPedidos.push(e)
+      }
+   });
+
+   if (mesesPedidos.length === 3) {
+      return mesesPedidos;
+   } else {
+      return "No se encontraron los meses pedidos";
+   }
 }
 
 function tablaDelSeis() {
    // Escribe una función que muestre la tabla de multiplicar del 6 (del 0 al 60).
    // La función devuelve un arreglo con los resultados de la tabla de multiplicar del 6 en orden creciente.
    // Tu código:
+   var tabla = []
+   for (let i = 0; i < 11; i++) {
+      const multiplicacion = 6 * i
+      tabla.push(multiplicacion)
+   }
+   return tabla;
 }
 
 function mayorACien(array) {
    // La función recibe un arreglo con enteros entre 0 y 200.
    // Recorrerlo y retornar un arreglo con todos los valores mayores a 100 (no incluye el 100).
    // Tu código:
+   var filtrar = array.filter(e => e > 100)
+   return filtrar;
 }
 
 /* ----------------------------------------------------------------------------------
@@ -157,6 +204,16 @@ function breakStatement(num) {
    // la ejecución y retornar el string: "Se interrumpió la ejecución".
    // [PISTA]: utiliza el statement 'break'.
    // Tu código:
+   var array = []
+   for (let i = 0; i < 10; i++) {
+      num += 2
+      array.push(num)
+      if (num === i) {
+         return "Se interrumpió la ejecución"
+         break
+      }
+   }
+   return array
 }
 
 function continueStatement(num) {
@@ -166,6 +223,17 @@ function continueStatement(num) {
    // se continua con la siguiente iteración.
    // [PISTA]: utiliza el statement 'continue'.
    // Tu código:
+   var array = []
+   for (let i = 0; i < 10; i++) {
+      if (i === 5) {
+         continue;
+      } else {
+         num += 2
+         array.push(num)
+      }
+      
+   }
+   return array
 }
 
 /*⚠️ NO MODIFIQUES NADA DEBAJO DE ESTO ⚠️*/

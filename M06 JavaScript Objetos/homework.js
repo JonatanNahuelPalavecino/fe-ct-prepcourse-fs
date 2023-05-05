@@ -128,6 +128,11 @@ function sumarLikesDeUsuario(objetoUsuario) {
    // Cada post posee una propiedad llamada "likes". Esta propiedad es un número.
    // Debes sumar los likes de todos los post y retornar el resultado.
    // Tu código:
+   var totalLikes = 0;
+   for (var i = 0; i < objetoUsuario.posts.length; i++) {
+      totalLikes += objetoUsuario.posts[i].likes;
+   }
+  return totalLikes;
 }
 
 function agregarMetodoCalculoDescuento(objetoProducto) {
@@ -141,6 +146,12 @@ function agregarMetodoCalculoDescuento(objetoProducto) {
    // PorcentajeDeDescuento ---> 0.2
    // Precio final ---> 8
    // Tu código:
+   objetoProducto.calcularPrecioDescuento = function() {
+      var descuento = this.precio * this.porcentajeDeDescuento
+      var precioFinal = this.precio - descuento
+      return precioFinal
+   }
+   return objetoProducto
 }
 
 /*⚠️ NO MODIFIQUES NADA DEBAJO DE ESTO ⚠️*/
